@@ -1,5 +1,6 @@
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework import filters
 
 from .serializers import ContactSerializer
 from .models import Contact
@@ -12,6 +13,8 @@ class ContactListView(generics.ListCreateAPIView):
 
     serializer_class = ContactSerializer
     permission_classes = (permissions.IsAuthenticated,)
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["first_name", "last_name"]
 
     def get_queryset(self):
         return Contact.objects.filter(owner=self.request.user)

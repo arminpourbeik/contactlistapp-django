@@ -30,7 +30,9 @@ INSTALLED_APPS = [
     # 3rd party apps
     "rest_framework",
     "drf_yasg",
+    "django_filters",
     "corsheaders",
+    "crispy_forms",
     # Local apps
     "authentication.apps.AuthenticationConfig",
     "contacts.apps.ContactsConfig",
@@ -123,6 +125,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 SIMPLE_JWT = {

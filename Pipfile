@@ -10,6 +10,8 @@ djangorestframework-simplejwt = "*"
 python-decouple = "*"
 drf-yasg = "*"
 django-cors-headers = "*"
+django-filter = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 black = "*"
